@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+
+    <script  src="https://vjs.zencdn.net/8.5.2/video.min.js"></script> -->
+
+    <title>IPTV плейлист</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+</head>
+<body>
+  
+  <div class="main" id="app">
+
+    <div v-if="showChannelsBlock" class="channels">
+        <div class="channel" @click="onImageClick('channel 1')">
+          <img src="1.jpg" alt="rick-img">
+          <div class="channel-name">channel 1</div>
+        </div>
+  
+        <div class="channel" @click="onImageClick('channel 2')">
+          <img src="1.jpg" alt="harry-img">
+          <div class="channel-name">channel 2</div>
+        </div>
+    </div>
+  
+    <div v-if="showPlayerBlock" class="player">
+      <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{}' ref="video"></video>
+    </div>
+
+
+
+    <h1>{{channel_name}}</h1>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
